@@ -4,6 +4,7 @@
   "description": "A simple package to animate text using css and js. Vanilla Js and React.js support.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
