@@ -1,6 +1,6 @@
 {
   "name": "animated-text-letters",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple package to animate text using css and js. Vanilla Js and React.js support.",
   "main": "dist/index.js",
   "scripts": {
