@@ -17,7 +17,7 @@ export function animateText(
   targetElement.appendChild(container);
 }
 
-const appear = `
+export const appear = `
 @keyframes appear {
     from {
         opacity: 0;
@@ -30,7 +30,7 @@ const appear = `
     }
 }
 `;
-const slideDown = `
+export const slideDown = `
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -44,7 +44,7 @@ const slideDown = `
     }
 }
 `;
-const slideUp = `
+export const slideUp = `
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -56,7 +56,7 @@ const slideUp = `
     }
 }
 `;
-const slideLeft = `
+export const slideLeft = `
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -68,7 +68,7 @@ const slideLeft = `
     }
 }
 `;
-const slideRight = `
+export const slideRight = `
 @keyframes slideUp {
     from {
         opacity: 0;
