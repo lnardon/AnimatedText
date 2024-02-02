@@ -4,7 +4,6 @@ interface AnimatedTextProps {
   text: string;
   animation?: string;
   delay?: number;
-  duration?: number;
   easing?: string;
   animateOnlyDifferentLetters?: boolean;
 }
@@ -13,7 +12,6 @@ const AnimatedText = ({
   text,
   animation = "fade-in",
   delay = 32,
-  duration = 1000,
   easing = "ease",
   animateOnlyDifferentLetters = false,
 }: AnimatedTextProps) => {
@@ -41,7 +39,7 @@ const AnimatedText = ({
             className={styles.char + " " + getAnimation(animation)}
             style={{
               animationDelay: `${index * delay}ms`,
-              animationDuration: `${duration}ms`,
+              animationDuration: `${delay * text.split("").length}ms`,
               animationTimingFunction: easing,
             }}
           >
