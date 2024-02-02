@@ -13,6 +13,10 @@
   animation-name: fadeIn;
 }
 
+.popUp {
+  animation-name: popup;
+}
+
 .slideUp {
   animation-name: slide-up;
 }
@@ -35,6 +39,17 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.64);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 

@@ -1,7 +1,7 @@
 #root {
   width: 100%;
   max-width: 1280px;
-  padding: 2rem;
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -30,6 +30,7 @@
   font-size: 5rem;
   font-weight: 700;
   word-break: break-all;
+  animation: popup 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .settings {
@@ -124,6 +125,19 @@
   font-size: 1.25rem;
   font-weight: 500;
   cursor: pointer;
+}
+
+.copy-btn {
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #08d966;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 @keyframes popup {

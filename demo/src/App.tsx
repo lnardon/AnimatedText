@@ -10,6 +10,16 @@ function App() {
   const [animateOnlyDifferentLetters, setAnimateOnlyDifferentLetters] =
     useState(false);
 
+  function copyToClipboard() {
+    const el = document.createElement("textarea");
+    el.value = `<AnimatedText text="${text}" animation="${animation}" delay={${delay}} easing="${easing}" animateOnlyDifferentLetters={${animateOnlyDifferentLetters}} />`;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+    alert("Copied to clipboard!");
+  }
+
   return (
     <div className="container">
       <div className="text">
@@ -39,6 +49,7 @@ function App() {
             className="select"
           >
             <option value="fade-in">Fade In</option>
+            <option value="pop-up">Pop Up</option>
             <option value="slide-down">Slide Down</option>
             <option value="slide-up">Slide Up</option>
             <option value="slide-left">Slide Left</option>
@@ -53,7 +64,7 @@ function App() {
           }}
         >
           <div className="input-container">
-            <h3 className="input-title">Animation delay(ms)</h3>
+            <h3 className="input-title">Letters delay (ms)</h3>
             <input
               type="number"
               value={delay}
@@ -88,6 +99,9 @@ function App() {
             Animate only different letters
           </label>
         </div>
+        <button className="copy-btn" onClick={copyToClipboard}>
+          Copy JSX Element
+        </button>
       </div>
     </div>
   );
