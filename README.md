@@ -1,10 +1,10 @@
-# Animated Text Letters
+# **Animated Text Letters**
 
-0 dependencies npm package to add animation to your text letters.
+Animate each letter in your text with a simple 0 dependencies React.js component.
 
 <img src="./docs/demo.gif" />
 
-Access the live demo here https://lnardon.github.io/AnimatedText
+**Access the live demo here https://lnardon.github.io/AnimatedText and try different configurations.**
 
 ## **Install**
 
@@ -12,38 +12,26 @@ Access the live demo here https://lnardon.github.io/AnimatedText
 npm install animated-text-letters
 ```
 
-The package also comes with 5 animations, just import the one you'd like and pass it as the 4th argument to the function. \
-They are:
+The package comes with 6 animations:
 
-- appear
-- slideUp
-- slideDown
-- slideLeft
-- slideRight
+- fade-in
+- pop-up
+- slide-up
+- slide-down
+- slide-left
+- slide-right
 
 ## **Usage**
 
-```typescript
-// text               : Text to be animated
-// targetId           : Id of the html element where the text will be animated and appended to. (element.append())
-// delay              : Amount of animation delay between letters in ms. (Optional)[Default: 0]
-// animationKeyframes : @keyframes animation to be applied to the letters. (Optional)[Default: slideDown]
+```tsx
+import AnimatedText from "animated-text-letters";
+import "animated-text-letters/dist/index.css";
 
-animateText(text:string, targetId:string, delay?:number = 0, animationKeyframes?:string);
+<AnimatedText
+  text="Animated Text Demo"
+  animation="slide-down"
+  delay={32}
+  easing="ease"
+  animateOnlyDifferentLetters={true}
+/>;
 ```
-
-HTML
-
-```html
-<div class="container">
-  <div id="animated-text"></div>
-</div>
-```
-
-Typescript / Javascript
-
-```javascript
-animateText("Hello World", "animated-text", 50, slideDown);
-```
-
-React: (coming soon...)
