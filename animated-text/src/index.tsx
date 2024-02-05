@@ -26,6 +26,8 @@ const AnimatedText = ({
         return styles.slideLeft
       case 'slide-right':
         return styles.slideRight
+      case 'pop-up':
+        return styles.popUp
       default:
         return styles.fadeIn
     }
