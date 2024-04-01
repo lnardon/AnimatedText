@@ -7,12 +7,12 @@ function App() {
   const [animation, setAnimation] = useState("fade-in");
   const [delay, setDelay] = useState(32);
   const [easing, setEasing] = useState("ease");
-  const [animateOnlyDifferentLetters, setAnimateOnlyDifferentLetters] =
+  const [transitionOnlyDifferentLetters, setTransitionOnlyDifferentLetters] =
     useState(false);
 
   function copyToClipboard() {
     const el = document.createElement("textarea");
-    el.value = `<AnimatedText text="${text}" animation="${animation}" delay={${delay}} easing="${easing}" animateOnlyDifferentLetters={${animateOnlyDifferentLetters}} />`;
+    el.value = `<AnimatedText text="${text}" animation="${animation}" delay={${delay}} easing="${easing}" transitionOnlyDifferentLetters={${transitionOnlyDifferentLetters}} />`;
     document.body.appendChild(el);
     el.select();
     document.execCommand("copy");
@@ -28,7 +28,7 @@ function App() {
           animation={animation}
           delay={delay}
           easing={easing}
-          animateOnlyDifferentLetters={animateOnlyDifferentLetters}
+          transitionOnlyDifferentLetters={transitionOnlyDifferentLetters}
         />
       </div>
       <div className="settings">
@@ -54,6 +54,11 @@ function App() {
             <option value="slide-up">Slide Up</option>
             <option value="slide-left">Slide Left</option>
             <option value="slide-right">Slide Right</option>
+            <option value="rotate-clockwise">Rotate Clockwise</option>
+            <option value="rotate-counter-clockwise">
+              Rotate Counter Clockwise
+            </option>
+            <option value="random">Random</option>
           </select>
         </div>
         <div
@@ -87,16 +92,18 @@ function App() {
         <div className="checkbox-container">
           <input
             type="checkbox"
-            checked={animateOnlyDifferentLetters}
-            onChange={(e) => setAnimateOnlyDifferentLetters(e.target.checked)}
+            checked={transitionOnlyDifferentLetters}
+            onChange={(e) =>
+              setTransitionOnlyDifferentLetters(e.target.checked)
+            }
             className="checkbox"
-            id="animateOnlyDifferentLetters"
+            id="transitionOnlyDifferentLetters"
           />
           <label
             className="checkbox-label"
-            htmlFor="animateOnlyDifferentLetters"
+            htmlFor="transitionOnlyDifferentLetters"
           >
-            Animate only different letters
+            Transition only between different letters
           </label>
         </div>
         <button className="copy-btn" onClick={copyToClipboard}>
