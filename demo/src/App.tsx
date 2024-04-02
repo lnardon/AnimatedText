@@ -9,10 +9,11 @@ function App() {
   const [easing, setEasing] = useState("ease");
   const [transitionOnlyDifferentLetters, setTransitionOnlyDifferentLetters] =
     useState(false);
+  const [duration, setDuration] = useState(1000);
 
   function copyToClipboard() {
     const el = document.createElement("textarea");
-    el.value = `<AnimatedText text="${text}" animation="${animation}" delay={${delay}} easing="${easing}" transitionOnlyDifferentLetters={${transitionOnlyDifferentLetters}} />`;
+    el.value = `<AnimatedText text="${text}" animation="${animation}" delay={${delay}} easing="${easing}" transitionOnlyDifferentLetters={${transitionOnlyDifferentLetters}} animationDuration={${duration}}/>`;
     document.body.appendChild(el);
     el.select();
     document.execCommand("copy");
@@ -29,6 +30,7 @@ function App() {
           delay={delay}
           easing={easing}
           transitionOnlyDifferentLetters={transitionOnlyDifferentLetters}
+          animationDuration={duration}
         />
       </div>
       <div className="settings">
@@ -88,6 +90,16 @@ function App() {
               className="input"
             />
           </div>
+        </div>
+        <div className="input-container">
+          <h3 className="input-title">Animation duration (ms)</h3>
+          <input
+            type="number"
+            value={duration}
+            onChange={(e) => setDuration(parseInt(e.target.value))}
+            placeholder="Delay"
+            className="input"
+          />
         </div>
         <div className="checkbox-container">
           <input

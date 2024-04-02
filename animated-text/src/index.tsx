@@ -7,6 +7,7 @@ interface AnimatedTextProps {
   delay?: number
   easing?: string
   transitionOnlyDifferentLetters?: boolean
+  animationDuration?: number
 }
 
 const AnimatedText = ({
@@ -14,7 +15,8 @@ const AnimatedText = ({
   animation = 'fade-in',
   delay = 32,
   easing = 'ease',
-  transitionOnlyDifferentLetters = false
+  transitionOnlyDifferentLetters = false,
+  animationDuration = 1000
 }: AnimatedTextProps) => {
   const animations = [
     styles.slideDown,
@@ -60,7 +62,7 @@ const AnimatedText = ({
             className={styles.char + ' ' + getAnimation(animation)}
             style={{
               animationDelay: `${index * delay}ms`,
-              animationDuration: `${delay * text.split('').length}ms`,
+              animationDuration: `${animationDuration}ms`,
               animationTimingFunction: easing
             }}
           >
