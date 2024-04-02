@@ -5,7 +5,7 @@ interface AnimatedTextProps {
   animation?: string;
   delay?: number;
   easing?: string;
-  animateOnlyDifferentLetters?: boolean;
+  transitionOnlyDifferentLetters?: boolean;
 }
 
 const AnimatedText = ({
@@ -13,8 +13,19 @@ const AnimatedText = ({
   animation = "fade-in",
   delay = 32,
   easing = "ease",
-  animateOnlyDifferentLetters = false,
+  transitionOnlyDifferentLetters = false,
 }: AnimatedTextProps) => {
+  const animations = [
+    styles.slideDown,
+    styles.slideUp,
+    styles.slideLeft,
+    styles.slideRight,
+    styles.popUp,
+    styles.fadeIn,
+    styles.rotateClockwise,
+    styles.rotateCounterClockwise,
+  ];
+
   function getAnimation(animation: string) {
     switch (animation) {
       case "slide-down":
@@ -27,6 +38,13 @@ const AnimatedText = ({
         return styles.slideRight;
       case "pop-up":
         return styles.popUp;
+      case "rotate-clockwise":
+        return styles.rotateClockwise;
+      case "rotate-counter-clockwise":
+        return styles.rotateCounterClockwise;
+      case "random":
+        const number = Math.floor(Math.random() * animations.length);
+        return animations[number];
       default:
         return styles.fadeIn;
     }
@@ -37,7 +55,7 @@ const AnimatedText = ({
       {text?.split("").map((char, index) => {
         return (
           <div
-            key={animateOnlyDifferentLetters ? index + char : Math.random()}
+            key={transitionOnlyDifferentLetters ? index + char : Math.random()}
             className={styles.char + " " + getAnimation(animation)}
             style={{
               animationDelay: `${index * delay}ms`,
