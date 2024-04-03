@@ -28,7 +28,7 @@ The package comes with 9 animations:
 
 ```tsx
 import AnimatedText from "animated-text-letters";
-import "animated-text-letters/dist/index.css";
+import "animated-text-letters/index.css";
 
 <AnimatedText
   text="Animated Text Demo"
