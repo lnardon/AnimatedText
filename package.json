@@ -1,8 +1,10 @@
 {
   "name": "animated-text-letters",
-  "version": "2.0.0",
-  "description": "A simple package to animate text using css and js. Vanilla Js and React.js support.",
-  "main": "dist/index.js",
+  "version": "2.1.4",
+  "description": "Animate each letter in your text with a simple 0 dependencies React.js component.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "module": "index.js",
   "scripts": {
     "build": "tsc",
     "build_demo": "browserify docs/main.js -o docs/bundle.js"
@@ -20,7 +22,7 @@
     "javascript",
     "html"
   ],
-  "author": "lnardon",
+  "author": "github.com/lnardon",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lnardon/AnimatedText/issues"
