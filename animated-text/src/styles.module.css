@@ -41,6 +41,22 @@
   animation-name: rotate-counter-clockwise;
 }
 
+.revealUp {
+  animation-name: reveal-up;
+}
+
+.revealDown {
+  animation-name: reveal-down;
+}
+
+.revealRight {
+  animation-name: reveal-right;
+}
+
+.revealLeft {
+  animation-name: reveal-left;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -124,5 +140,49 @@
   100% {
     opacity: 1;
     transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes reveal-up {
+  0% {
+    clip-path: polygon(0% 100%, 0% 100%, 100% 100%, 100% 100%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-down {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 0%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-right {
+  0% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%);
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-left {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
   }
 }
