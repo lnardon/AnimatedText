@@ -60,6 +60,10 @@ function App() {
             <option value="rotate-counter-clockwise">
               Rotate Counter Clockwise
             </option>
+            <option value="reveal-up">Reveal Up</option>
+            <option value="reveal-down">Reveal Down</option>
+            <option value="reveal-left">Reveal Left</option>
+            <option value="reveal-right">Reveal Right</option>
             <option value="random">Random</option>
           </select>
         </div>

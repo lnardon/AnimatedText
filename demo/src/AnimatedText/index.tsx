@@ -26,6 +26,10 @@ const AnimatedText = ({
     styles.fadeIn,
     styles.rotateClockwise,
     styles.rotateCounterClockwise,
+    styles.revealUp,
+    styles.revealDown,
+    styles.revealLeft,
+    styles.revealRight,
   ];
 
   function getAnimation(animation: string) {
@@ -44,6 +48,14 @@ const AnimatedText = ({
         return styles.rotateClockwise;
       case "rotate-counter-clockwise":
         return styles.rotateCounterClockwise;
+      case "reveal-up":
+        return styles.revealUp;
+      case "reveal-down":
+        return styles.revealDown;
+      case "reveal-left":
+        return styles.revealLeft;
+      case "reveal-right":
+        return styles.revealRight;
       case "random":
         const number = Math.floor(Math.random() * animations.length);
         return animations[number];
