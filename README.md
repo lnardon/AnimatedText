@@ -12,7 +12,7 @@ Animate each letter in your text with a simple 0 dependencies React.js component
 npm install animated-text-letters
 ```
 
-The package comes with 9 animations:
+The package comes with 13 animations:
 
 - fade-in
 - pop-up
@@ -22,6 +22,10 @@ The package comes with 9 animations:
 - slide-right
 - rotate-clockwise
 - rotate-counter-clockwise
+- reveal-up
+- reveal-down
+- reveal-left
+- reveal-right
 - random
 
 ## **Usage**

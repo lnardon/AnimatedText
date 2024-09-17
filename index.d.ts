@@ -6,6 +6,7 @@ interface AnimatedTextProps {
     easing?: string;
     transitionOnlyDifferentLetters?: boolean;
     animationDuration?: number;
+    style?: React.CSSProperties;
 }
-declare const AnimatedText: ({ text, animation, delay, easing, transitionOnlyDifferentLetters, animationDuration }: AnimatedTextProps) => React.JSX.Element;
+declare const AnimatedText: ({ text, animation, delay, easing, transitionOnlyDifferentLetters, animationDuration, style }: AnimatedTextProps) => React.JSX.Element;
 export default AnimatedText;

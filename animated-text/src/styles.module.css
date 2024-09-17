@@ -1,10 +1,5 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .char {
+  line-height: 110%;
   opacity: 0;
   animation-fill-mode: forwards;
 }

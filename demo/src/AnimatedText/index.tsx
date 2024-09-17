@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./styles.module.css";
 
 interface AnimatedTextProps {
@@ -7,6 +8,7 @@ interface AnimatedTextProps {
   easing?: string;
   transitionOnlyDifferentLetters?: boolean;
   animationDuration?: number;
+  style?: React.CSSProperties;
 }
 
 const AnimatedText = ({
@@ -16,6 +18,7 @@ const AnimatedText = ({
   easing = "ease",
   transitionOnlyDifferentLetters = false,
   animationDuration = 1000,
+  style,
 }: AnimatedTextProps) => {
   const animations = [
     styles.slideDown,
@@ -57,27 +60,53 @@ const AnimatedText = ({
       case "reveal-right":
         return styles.revealRight;
       case "random":
-        const number = Math.floor(Math.random() * animations.length);
-        return animations[number];
+        // const number = Math.floor(Math.random() * animations.length);
+        return animations[1];
       default:
         return styles.fadeIn;
     }
   }
 
   return (
-    <div className={styles.container}>
-      {text?.split("").map((char, index) => {
+    <div
+      style={
+        style
+          ? style
+          : {
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+            }
+      }
+    >
+      {text?.split(" ").map((word, idx) => {
         return (
           <div
-            key={transitionOnlyDifferentLetters ? index + char : Math.random()}
-            className={styles.char + " " + getAnimation(animation)}
             style={{
-              animationDelay: `${index * delay}ms`,
-              animationDuration: `${animationDuration}ms`,
-              animationTimingFunction: easing,
+              display: "flex",
+              marginRight: "1.5rem",
             }}
           >
-            {char === " " ? "\u00A0" : char}
+            {word.split("").map((letter, index) => {
+              index = idx + 1 * word.length + index;
+              return (
+                <div
+                  key={
+                    transitionOnlyDifferentLetters
+                      ? index + letter
+                      : Math.random()
+                  }
+                  className={styles.char + " " + getAnimation(animation)}
+                  style={{
+                    animationDelay: `${index * delay}ms`,
+                    animationDuration: `${animationDuration}ms`,
+                    animationTimingFunction: easing,
+                  }}
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </div>
+              );
+            })}
           </div>
         );
       })}

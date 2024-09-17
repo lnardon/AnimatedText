@@ -1,10 +1,5 @@
-._1Lxpd {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 ._IO_LD {
+  line-height: 110%;
   opacity: 0;
   animation-fill-mode: forwards;
 }
@@ -39,6 +34,22 @@
 
 ._2nSbU {
   animation-name: _3KZhJ;
+}
+
+._3biuZ {
+  animation-name: _2Es-0;
+}
+
+._3QFND {
+  animation-name: _tw2Dp;
+}
+
+._jo4TG {
+  animation-name: _P7sh0;
+}
+
+._3N77a {
+  animation-name: _2Y7_a;
 }
 
 @keyframes _3uImN {
@@ -124,5 +135,57 @@
   100% {
     opacity: 1;
     transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes _2Es-0 {
+  0% {
+    -webkit-clip-path: polygon(0% 100%, 0% 100%, 100% 100%, 100% 100%);
+            clip-path: polygon(0% 100%, 0% 100%, 100% 100%, 100% 100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);
+            clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);
+    opacity: 1;
+  }
+}
+
+@keyframes _tw2Dp {
+  0% {
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 0%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes _P7sh0 {
+  0% {
+    -webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%);
+            clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%);
+    opacity: 1;
+  }
+}
+
+@keyframes _2Y7_a {
+  0% {
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
   }
 }

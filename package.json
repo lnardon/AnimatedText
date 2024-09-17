@@ -1,6 +1,6 @@
 {
   "name": "animated-text-letters",
-  "version": "2.1.6",
+  "version": "2.1.9",
   "description": "Animate each letter in your text with a simple 0 dependencies React.js component.",
   "main": "index.js",
   "types": "index.d.ts",
